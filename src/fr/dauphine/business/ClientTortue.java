@@ -7,7 +7,7 @@ import fr.dauphine.models.TortueNinja;
 public class ClientTortue extends Client{
 
 	private TortueNinja tortue;
-	private int nbPizza;
+	
 	public ClientTortue() {
 		super();
 	}
@@ -19,7 +19,7 @@ public class ClientTortue extends Client{
 	
 	
 	public void CommanderPizza(TortueNinja tortue,Pizza pizza){
-		tortue.addA(pizza);
+		tortue.commanderPizza(pizza);
 	}
 	
 	

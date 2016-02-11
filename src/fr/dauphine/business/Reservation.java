@@ -5,23 +5,13 @@ import fr.dauphine.models.Chambre;
 import fr.dauphine.models.Client;
 import fr.dauphine.models.Hotel;
 
-public class Reservation {
+public class Reservation implements ReservationInterface {
 	
 	private Hotel hotel;
 	private Client client;
 	private String date;
 	private int nbJour;
 	private Chambre chambre;
-	
-	public Reservation(Hotel hotel, Client client, String date, int nbJour,
-			Chambre chambre) {
-		super();
-		this.hotel = hotel;
-		this.client = client;
-		this.date = date;
-		this.nbJour = nbJour;
-		this.chambre = chambre;
-	}
 	
 	public Reservation() {
 		super();
@@ -56,6 +46,30 @@ public class Reservation {
 	}
 	public void setChambre(Chambre chambre) {
 		this.chambre = chambre;
+	}
+
+	@Override
+	public void reserver(Hotel hotel, Client client, String date, int nbJour,
+			Chambre chambre) {
+		
+		this.hotel = hotel;
+		this.client = client;
+		this.date = date;
+		this.nbJour = nbJour;
+		this.chambre = chambre;
+		hotel.addClient(client);
+	}
+
+	@Override
+	public void reserver(Hotel hotel, ClientTortue client, String date,
+			int nbJour, Chambre chambre) {
+
+		this.hotel = hotel;
+		this.client = client;
+		this.date = date;
+		this.nbJour = nbJour;
+		this.chambre = chambre;
+		hotel.addClient(client);
 	}
 	
 	
