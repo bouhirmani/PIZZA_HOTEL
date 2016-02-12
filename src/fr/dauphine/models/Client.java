@@ -3,7 +3,13 @@ package fr.dauphine.models;
 
 public class Client
 {
-    private String nom;
+    @Override
+	public String toString() {
+		return "Client [nom=" + nom + ", prenom=" + prenom + ", adresse="
+				+ adresse + ", email=" + email + ", tel=" + tel + "]";
+	}
+
+	private String nom;
     private String prenom;
     private String adresse;
     private String email;

@@ -19,7 +19,12 @@ public class Pizza
 	}
 
     
-    public String getNom() {
+    public Pizza() {
+		super();
+	}
+
+
+	public String getNom() {
 		return nom;
 	}
 	public void setNom(String nom) {
@@ -36,6 +41,12 @@ public class Pizza
 	}
 	public void setType(TAILLE type) {
 		this.type = type;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Pizza [nom=" + nom + ", prix=" + prix + ", type=" + type + "]";
 	}
     
     

@@ -1,8 +1,5 @@
-package fr.dauphine.business;
+package fr.dauphine.models;
 
-import fr.dauphine.models.Client;
-import fr.dauphine.models.Pizza;
-import fr.dauphine.models.TortueNinja;
 
 public class ClientTortue extends Client{
 
@@ -12,13 +9,22 @@ public class ClientTortue extends Client{
 		super();
 	}
 
+	public TortueNinja getTortue() {
+		return tortue;
+	}
+
+	public void setTortue(TortueNinja tortue) {
+		this.tortue = tortue;
+	}
+
 	public ClientTortue(String nom, String prenom, String adresse,
 			String email, String tel) {
 		super(nom, prenom, adresse, email, tel);
+		this.tortue = new TortueNinja(nom);
 	}
 	
 	
-	public void CommanderPizza(TortueNinja tortue,Pizza pizza){
+	public void CommanderPizza(Pizza pizza){
 		tortue.commanderPizza(pizza);
 	}
 	

@@ -1,9 +1,14 @@
 package fr.dauphine.business;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import fr.dauphine.models.Chambre;
 import fr.dauphine.models.Client;
+import fr.dauphine.models.ClientTortue;
 import fr.dauphine.models.Hotel;
+import fr.dauphine.models.Pizza;
 
 public class Reservation implements ReservationInterface {
 	
@@ -59,18 +64,24 @@ public class Reservation implements ReservationInterface {
 		this.chambre = chambre;
 		hotel.addClient(client);
 	}
-
 	@Override
-	public void reserver(Hotel hotel, ClientTortue client, String date,
-			int nbJour, Chambre chambre) {
-
-		this.hotel = hotel;
-		this.client = client;
-		this.date = date;
-		this.nbJour = nbJour;
-		this.chambre = chambre;
-		hotel.addClient(client);
+		public void reserver(Hotel hotel, ClientTortue client, String date,
+				int nbJour, Chambre chambre) {
+	
+			this.hotel = hotel;
+			this.client = client;
+			this.date = date;
+			this.nbJour = nbJour;
+			this.chambre = chambre;
+			hotel.addClient(client);
+		}
+	
+	@Override
+	public String toString() {
+		return "Reservation [hotel=" + hotel + ", client=" + client + ", date="
+				+ date + ", nbJour=" + nbJour + ", chambre=" + chambre + "]";
 	}
+
 	
 	
 }

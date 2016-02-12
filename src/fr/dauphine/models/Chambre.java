@@ -2,6 +2,11 @@ package fr.dauphine.models;
 
 public class Chambre {
 
+	@Override
+	public String toString() {
+		return "Chambre [numero=" + numero + ", etage=" + etage + ", prix="
+				+ prix + ", categorie=" + categorie + "]";
+	}
 	public enum TYPECHAMBRE{
 		HARMONY,TRADITION,TRIPLE,FAMILIALE, ROYAL
 	}

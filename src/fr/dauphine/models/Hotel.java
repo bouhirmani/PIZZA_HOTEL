@@ -7,16 +7,11 @@ import fr.dauphine.models.Chambre.TYPECHAMBRE;
 
 public class Hotel
 {
-    
-    private String nom;
+	private String nom;
     private String adresse;
     private List<Client>listClients;
     private List<Chambre>listChambre;
-    
-    
-	public List<Chambre> getListChambre() {
-		return listChambre;
-	}
+
 	public Hotel(String nom, String adresse) {
 		super();
 		this.nom = nom;
@@ -64,4 +59,20 @@ public class Hotel
 	public void addClient(Client client){
 		listClients.add(client);
 	}
+	
+	public List<Client> getListClients() {
+		return listClients;
+	}
+
+	public List<Chambre> getListChambre() {
+		return listChambre;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Hotel [nom=" + nom + ", adresse=" + adresse + ", listClients="
+				+ listClients + ", listChambre=" + listChambre + "]";
+	}
+	
 }

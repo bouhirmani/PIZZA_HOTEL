@@ -2,6 +2,7 @@ package fr.dauphine.business;
 
 import fr.dauphine.models.Chambre;
 import fr.dauphine.models.Client;
+import fr.dauphine.models.ClientTortue;
 import fr.dauphine.models.Hotel;
 
 public interface ReservationInterface {

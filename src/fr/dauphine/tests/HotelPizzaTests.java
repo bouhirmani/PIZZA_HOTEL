@@ -1,17 +1,19 @@
 package fr.dauphine.tests;
 
 
-import fr.dauphine.business.ClientTortue;
+import java.util.Date;
+
 import fr.dauphine.business.Reservation;
 import fr.dauphine.models.Client;
+import fr.dauphine.models.ClientTortue;
 import fr.dauphine.models.Hotel;
 import fr.dauphine.models.Pizza;
 import fr.dauphine.models.Pizza.TAILLE;
-import fr.dauphine.models.TortueNinja;
 
 public class HotelPizzaTests {
 	
-	public Reservation reserverHotel(){
+	
+	public static void main(String[] args) {
 		
 		Hotel hotel1 = new Hotel("MERCURE", "2B RUE DE LA PEROUSE");
 		
@@ -23,12 +25,14 @@ public class HotelPizzaTests {
 		
 		
 		Reservation reservation = new Reservation();
-		reservation.reserver(hotel1, client1, "11/02/2016", 3, hotel1.getListChambre().get(1));
+		Date date = new Date();
+		reservation.reserver(hotel1, client1, date.toString(), 3, hotel1.getListChambre().get(1));
 		
 		
-		client2.CommanderPizza(new TortueNinja(client2.getNom()),new Pizza("Fruit De Mer",30,TAILLE.GRANDE));
-		
-		return reservation;
+		client2.CommanderPizza(new Pizza("Fruit De Mer",30,TAILLE.GRANDE));
+		client2.CommanderPizza(new Pizza("4 Fromage",20,TAILLE.PETITE));
+
+		System.out.println(reservation.toString());
 	}
 }
 
